@@ -1,26 +1,20 @@
-const Navbar = ({ pokemonIndex, pokemonLength, setPokemonIndex }) => {
+const Navbar = ({ pokemonList, setPokemonIndex }) => {
 	
 	
-	const handleNext = () => {
-		setPokemonIndex(pokemonIndex + 1);
+	const handleClick = (id) => {
+		
+        setPokemonIndex(id);
 	};
-
-	const handlePrev = () => {
-		setPokemonIndex(pokemonIndex - 1);
-	};
+ 
 	return (
-		<div>
-			{pokemonIndex > 0 ? (
-				<button onClick={handlePrev}>Précédent</button>
-			) : (
-				""
-			)}
-			{pokemonIndex < pokemonLength ? (
-				<button onClick={handleNext}>Suivant</button>
-			) : (
-				""
-			)}
-		</div>
+        <div>
+             {pokemonList.map((pokemon, index) => {
+                return (
+                <button key={index} onClick ={() => handleClick(index)}>{pokemon.name}</button>
+                )
+             })}
+        </div>
+		
 	);
 };
 

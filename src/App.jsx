@@ -36,9 +36,8 @@ function App() {
 			<PokemonCard pokemon={pokemonChoice} />
 			
 			<Navbar
-				pokemonIndex={pokemonIndex}
-				pokemonLength={pokemonList.length - 1}
-				setPokemonIndex={setPokemonIndex}
+				pokemonList={pokemonList}
+        setPokemonIndex={setPokemonIndex}
 			/>
 		</div>
 	);
